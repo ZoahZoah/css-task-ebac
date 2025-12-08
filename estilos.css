@@ -18,7 +18,7 @@ body {
 	min-height: 100vh;
 }
 
-header {
+.header {
 	display: grid;
 	grid-area: header;
 	justify-content: center;
@@ -26,9 +26,10 @@ header {
 	background-color: rgb(248, 173, 111);
 	padding: 1rem;
 	height: 7rem;
+	box-shadow: 0.125rem 0.125rem 0.25rem rgb(200, 200, 200);
 }
 
-header img {
+.header__logo {
 	text-align: center;
 	grid-column: 3;
 	border-radius: 5rem;
@@ -38,17 +39,23 @@ header img {
 	transform: translateX(-50%);
 }
 
-sidebar nav {
+.sidebar {
+	margin-top: 1rem;
 	grid-area: sidebar;
 	width: 100%;
 	padding: 1.25rem;
 	text-align: start;
 	border-radius: 0.5rem;
-	background-color: rgb(250, 250, 250);
+	background-color: none;
 }
 
-sidebar nav.checkbtn {
-	.checkbtn {
+.sidebar:has(.sidebar__checkbox:checked) {
+    background-color: rgb(250, 250, 250); /* A cor que você quer */
+    transition: background-color 0.3s ease;
+}
+
+.button--checkbtn {
+	.button--checkbtn {
 		font-size: 1.5rem;
 		color: white;
 		cursor: pointer;
@@ -56,7 +63,7 @@ sidebar nav.checkbtn {
 	transition-duration: 0.3s;
 }
 
-sidebar nav label i {
+.sidebar__icon {
 	font-size: 1.5rem;
 	color: rgb(120, 120, 120);
 	transition-duration: 0.3s;
@@ -65,53 +72,51 @@ sidebar nav label i {
 	padding: 0.25rem 0.5rem;
 }
 
-sidebar nav label i:hover {
+.sidebar__icon:hover {
 	color: rgb(240, 240, 240);
 	transform: scale(1.3);
 	cursor: pointer;
 	background-color: rgb(100, 100, 100);
 }
 
-sidebar nav ul {
+.sidebar__list {
 	display: none;
-}
-
-sidebar nav #check {
-	display: none;
-}
-
-sidebar nav #check:checked ~ ul {
-	display: block;
-}
-
-sidebar nav ul {
 	margin-top: 1rem;
 	list-style: none;
 	width: 100%;
 	font-weight: bold;
 }
 
-sidebar nav ul li a {
+.sidebar__checkbox {
+	display: none;
+}
+
+.sidebar__checkbox:checked ~ .sidebar__list {
+	display: block;
+	
+}
+
+.sidebar__link {
 	display: block;
 	color: rgb(120, 120, 120);
 	text-decoration: none;
 	line-height: 2.5rem;
 }
 
-sidebar nav ul li a:hover {
+.sidebar__link:hover {
 	text-decoration: underline;
 	cursor: pointer;
 	color: rgb(30, 30, 30);
 }
 
-main {
+.content {
 	grid-area: main;
 	padding: 1.25rem;
 	text-align: center;
 	margin: 0.5rem;
 }
 
-section {
+.section {
 	margin: 0 auto 1.25rem auto;
 	background-color: rgb(250, 250, 250);
 	width: 90%;
@@ -121,39 +126,35 @@ section {
 	box-shadow: 0.125rem 0.125rem 0.25rem rgb(200, 200, 200);
 }
 
-section.banner h1 {
+.section__title {
 	font-size: 2rem;
 	color: rgb(80, 80, 80);
 }
 
-section.banner p {
+.section__paragraph {
 	font-size: 1.25rem;
 	color: rgb(100, 100, 100);
+	margin-bottom: 1.25rem;
 }
 
-.banner img {
-	width: 50%;
+.section__img {
+	width: 80%;
 	border-radius: 0.5rem;
 }
 
-section h2 {
+.section__subtitle {
 	font-size: 1.75rem;
 	color: rgb(80, 80, 80);
 	margin-bottom: 1rem;
 }
-section h3 {
+
+.section__subtitle-3 {
 	font-size: 1.5rem;
 	color: rgb(27, 170, 170);
 	margin-bottom: 1rem;
 }
 
-section p {
-	font-size: 1rem;
-	color: rgb(20, 20, 20);
-	margin-bottom: 1.25rem;
-}
-
-section.servicos {
+.section--servicos {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas:
@@ -164,17 +165,7 @@ section.servicos {
 	margin-bottom: 1.25rem;
 }
 
-section.servicos h2 {
-	grid-area: title;
-}
-
-section.servicos p {
-	color: rgb(20, 20, 20);
-	grid-area: text;
-	margin-bottom: 1.5rem;
-}
-
-section.servicos img {
+.section__img--grid {
 	justify-self: center;
 	width: 10rem;
 	height: 10rem;
@@ -182,36 +173,23 @@ section.servicos img {
 	border-radius: 50%;
 }
 
-section.servicos .title-img1 {
-	grid-area: title-img1;
-}
+.section__subtitle--servicos { grid-area: title;}
+.section__paragraph--servicos {	grid-area: text;}
 
-section.servicos .img1 {
-	grid-area: img1;
-}
+.section__img--grid--1 { grid-area: img1; }
+.section__img--grid--2 { grid-area: img2; }
+.section__img--grid--3 { grid-area: img3; }
+.section__subtitle-3--1 { grid-area: title-img1; }
+.section__subtitle-3--2 { grid-area: title-img2; }
+.section__subtitle-3--3 { grid-area: title-img3; }
 
-section.servicos .title-img2 {
-	grid-area: title-img2;
-}
-
-section.servicos .img2 {
-	grid-area: img2;
-}
-section.servicos .title-img3 {
-	grid-area: title-img3;
-}
-
-section.servicos .img3 {
-	grid-area: img3;
-}
-
-section.contato {
+.section--contato {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
 }
 
-section.contato label {
+.section__label {
 	width: 50%;
 	text-align: left;
 	margin: 0.5rem 0rem 0.25rem 0rem;
@@ -220,8 +198,7 @@ section.contato label {
 	margin: 0.5rem auto 0.25rem auto;
 }
 
-section.contato input,
-section.contato textarea {
+.section__input {
 	width: 50%;
 	padding: 0.5rem;
 	border: 1px solid rgb(200, 200, 200);
@@ -230,16 +207,20 @@ section.contato textarea {
 	margin: 0.5rem auto 1.25rem auto;
 }
 
-section.contato button {
-	width: 20%;
+.button {
 	padding: 0.75rem;
 	border: none;
 	border-radius: 0.25rem;
-	background-color: rgb(27, 170, 170);
-	color: white;
 	font-size: 1rem;
+	font-weight: bold;
 	cursor: pointer;
 	margin: 0.5rem auto 1.25rem auto;
+}
+
+.button--form {
+	width: 20%;
+	background-color: rgb(27, 170, 170);
+	color: white;
 }
 
 @media (max-width: 720px) {
@@ -251,22 +232,22 @@ section.contato button {
 			"footer";
 	}
 
-	header img {
+	.header__logo {
 		grid-column: 1;
 	}
 
-	sidebar nav {
+	.sidebar {
 		grid-area: sidebar;
 		text-align: center;
 		border-radius: 0.5rem;
 	}
 
-    section.banner img {
+    .section__img {
         width: 90%;
         height: 10rem;
     }
 
-	section.servicos {
+	.section--servicos {
 		grid-template-columns: 1fr;
 		grid-template-areas:
 			"title"
@@ -280,16 +261,15 @@ section.contato button {
 		text-align: center;
 	}
 
-	section.servicos img {
+	.section__img--grid {
 		width: 12rem;
 		height: 12rem;
 		margin: 0 auto 3rem auto;
 	}
 
-	section.contato label,
-	section.contato input,
-	section.contato textarea,
-	section.contato button {
+	.section__label,
+	.section__input,
+	.button--form {
 		width: 100%;
 		text-align: center;
 	}

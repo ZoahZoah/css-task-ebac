@@ -5,37 +5,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Agência Criativa Web</title>
 		<link rel="stylesheet" href="estilos.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		/>
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<img
-					src="./logo.png"
-					alt="Logo da Agência Criativa Web"
-				/>
+			<header class="header">
+				<img class="header__logo" src="./logo.png" alt="Logo da Agência Criativa Web" />
 			</header>
-			<sidebar>
-				<nav>
-					<input type="checkbox" id="check">
-					<label for="check" class="checkbtn">
-						<i class="fa-solid fa-bars"></i>
-					</label>
 
-					<ul>
-						<li><a href="#sobre-nos">Sobre Nós</a></li>
-						<li><a href="#servicos">Serviços</a></li>
-						<li><a href="#depoimentos">Depoimentos</a></li>
-						<li><a href="#contato">Contato</a></li>
-					</ul>
-				</nav>
-			</sidebar>
-			<main>
-				<section class="banner">
-					<h1>Bem-vindo à Agência Criativa Web</h1>
-					<p>Sua solução completa para presença digital.</p>
+			<nav class="sidebar">
+				<input class="sidebar__checkbox" type="checkbox" id="check" />
+				<label for="check" class="button button--checkbtn">
+					<i class="fa-solid fa-bars sidebar__icon"></i>
+				</label>
 
-					<img
+				<ul class="sidebar__list">
+					<li class="sidebar__item"><a class="sidebar__link" href="#sobre-nos">Sobre Nós</a></li>
+					<li class="sidebar__item"><a class="sidebar__link" href="#servicos">Serviços</a></li>
+					<li class="sidebar__item"><a class="sidebar__link" href="#depoimentos">Depoimentos</a></li>
+					<li class="sidebar__item"><a class="sidebar__link" href="#contato">Contato</a></li>
+				</ul>
+			</nav>
+
+			<main class="content">
+				<section class="section section--banner">
+					<h1 class="section__title">Bem-vindo à Agência Criativa Web</h1>
+					<p class="section__paragraph">Sua solução completa para presença digital.</p>
+
+					<img class="section__img"
 						srcset="
 							capa-pequena.jpg  600w,
 							capa-media.jpg   1082w,
@@ -49,62 +49,62 @@
 					/>
 				</section>
 
-				<section class="sobre-nos">
-					<h2>Sobre Nós</h2>
-					<p>
+				<section class="section section--sobre-nos">
+					<h2 class="section__subtitle">Sobre Nós</h2>
+					<p class="section__paragraph">
 						Somos uma agência criativa dedicada a transformar ideias
 						em realidade digital.
 					</p>
 					<!-- criar a seção sobre nós -->
 				</section>
 
-				<section class="servicos">
-					<h2>Serviços</h2>
-					<p>Conheça nossos Serviços:</p>
+				<section class="section section--servicos">
+					<h2 class="section__subtitle section__subtitle--servicos">Serviços</h2>
+					<p class="section__paragraph section__paragraph--servicos">Conheça nossos Serviços:</p>
 
-					<h3 class="title-img1">Design Web</h3>
-					<img class="img1" src="design-web.jpg" alt="Design Web" />
+					<h3 class="section__subtitle-3 section__subtitle-3--1">Design Web</h3>
+					<img class="section__img--grid section__img--grid--1" src="design-web.jpg" alt="Design Web" />
 
-					<h3 class="title-img2">Marketing Digital</h3>
+					<h3 class="section__subtitle-3 	section__subtitle-3--2">Marketing Digital</h3>
 					<img
-						class="img2"
+						class="section__img--grid section__img--grid--2"
 						src="marketing-digital.jpg"
 						alt="Marketing Digital"
 					/>
 
-					<h3 class="title-img3">Desenvolvimento de Aplicativos</h3>
+					<h3 class="section__subtitle-3 section__subtitle-3--3">Desenvolvimento de Aplicativos</h3>
 					<img
-						class="img3"
+						class="section__img--grid section__img--grid--3"
 						src="desenvolvimento-aplicativos.jpg"
 						alt="Desenvolvimento de Aplicativos"
 					/>
 				</section>
 
-				<section class="depoimentos">
-					<h2>Depoimentos</h2>
-					<p>
+				<section class="section section--depoimentos">
+					<h2 class="section__subtitle">Depoimentos</h2>
+					<p class="section__paragraph">
 						"A Agência Criativa Web transformou nosso site e
 						aumentou nossa presença online!" - Cliente Satisfeito
 					</p>
 					<!-- criar a seção depoimentos -->
 				</section>
 
-				<section class="contato">
-					<h2>Contato</h2>
+				<section class="section section--contato">
+					<h2 class="section__subtitle">Contato</h2>
 					<p>
 						Entre em contato conosco para discutir seu próximo
 						projeto!
 					</p>
-					<label for="nome">Nome:</label>
-					<input type="text" id="nome" name="nome" />
+					<label class="section__label" for="nome">Nome:</label>
+					<input class="section__input" type="text" id="nome" name="nome" />
 
-					<label for="email">Email:</label>
-					<input type="email" id="email" name="email" />
+					<label class="section__label" for="email">Email:</label>
+					<input class="section__input" type="email" id="email" name="email" />
 
-					<label for="mensagem">Mensagem:</label>
-					<textarea id="mensagem" name="mensagem"></textarea>
+					<label class="section__label" for="mensagem">Mensagem:</label>
+					<textarea class="section__input" id="mensagem" name="mensagem"></textarea>
 
-					<button type="submit">Enviar</button>
+					<button class="button button--form" type="submit">Enviar</button>
 				</section>
 			</main>
 		</div>
