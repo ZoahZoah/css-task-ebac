@@ -1,0 +1,296 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: rgb(245, 245, 245);
+}
+
+.container {
+	display: grid;
+	grid-template-areas:
+		"header header header header"
+		"sidebar main main main"
+		"footer footer footer footer";
+	min-height: 100vh;
+}
+
+header {
+	display: grid;
+	grid-area: header;
+	justify-content: center;
+	gap: 1.25rem;
+	background-color: rgb(248, 173, 111);
+	padding: 1rem;
+	height: 7rem;
+}
+
+header img {
+	text-align: center;
+	grid-column: 3;
+	border-radius: 5rem;
+	height: 5rem;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+sidebar nav {
+	grid-area: sidebar;
+	width: 100%;
+	padding: 1.25rem;
+	text-align: start;
+	border-radius: 0.5rem;
+	background-color: rgb(250, 250, 250);
+}
+
+sidebar nav.checkbtn {
+	.checkbtn {
+		font-size: 1.5rem;
+		color: white;
+		cursor: pointer;
+	}
+	transition-duration: 0.3s;
+}
+
+sidebar nav label i {
+	font-size: 1.5rem;
+	color: rgb(120, 120, 120);
+	transition-duration: 0.3s;
+	border: rgb(80, 80, 80) solid 0.05rem;
+	border-radius: 0.25rem;
+	padding: 0.25rem 0.5rem;
+}
+
+sidebar nav label i:hover {
+	color: rgb(240, 240, 240);
+	transform: scale(1.3);
+	cursor: pointer;
+	background-color: rgb(100, 100, 100);
+}
+
+sidebar nav ul {
+	display: none;
+}
+
+sidebar nav #check {
+	display: none;
+}
+
+sidebar nav #check:checked ~ ul {
+	display: block;
+}
+
+sidebar nav ul {
+	margin-top: 1rem;
+	list-style: none;
+	width: 100%;
+	font-weight: bold;
+}
+
+sidebar nav ul li a {
+	display: block;
+	color: rgb(120, 120, 120);
+	text-decoration: none;
+	line-height: 2.5rem;
+}
+
+sidebar nav ul li a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	color: rgb(30, 30, 30);
+}
+
+main {
+	grid-area: main;
+	padding: 1.25rem;
+	text-align: center;
+	margin: 0.5rem;
+}
+
+section {
+	margin: 0 auto 1.25rem auto;
+	background-color: rgb(250, 250, 250);
+	width: 90%;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	margin-bottom: 1.25rem;
+	box-shadow: 0.125rem 0.125rem 0.25rem rgb(200, 200, 200);
+}
+
+section.banner h1 {
+	font-size: 2rem;
+	color: rgb(80, 80, 80);
+}
+
+section.banner p {
+	font-size: 1.25rem;
+	color: rgb(100, 100, 100);
+}
+
+.banner img {
+	width: 50%;
+	border-radius: 0.5rem;
+}
+
+section h2 {
+	font-size: 1.75rem;
+	color: rgb(80, 80, 80);
+	margin-bottom: 1rem;
+}
+section h3 {
+	font-size: 1.5rem;
+	color: rgb(27, 170, 170);
+	margin-bottom: 1rem;
+}
+
+section p {
+	font-size: 1rem;
+	color: rgb(20, 20, 20);
+	margin-bottom: 1.25rem;
+}
+
+section.servicos {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+		"title title title"
+		"text text text"
+		"title-img1 title-img2 title-img3"
+		"img1 img2 img3";
+	margin-bottom: 1.25rem;
+}
+
+section.servicos h2 {
+	grid-area: title;
+}
+
+section.servicos p {
+	color: rgb(20, 20, 20);
+	grid-area: text;
+	margin-bottom: 1.5rem;
+}
+
+section.servicos img {
+	justify-self: center;
+	width: 10rem;
+	height: 10rem;
+	border: black solid 0.05rem;
+	border-radius: 50%;
+}
+
+section.servicos .title-img1 {
+	grid-area: title-img1;
+}
+
+section.servicos .img1 {
+	grid-area: img1;
+}
+
+section.servicos .title-img2 {
+	grid-area: title-img2;
+}
+
+section.servicos .img2 {
+	grid-area: img2;
+}
+section.servicos .title-img3 {
+	grid-area: title-img3;
+}
+
+section.servicos .img3 {
+	grid-area: img3;
+}
+
+section.contato {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+section.contato label {
+	width: 50%;
+	text-align: left;
+	margin: 0.5rem 0rem 0.25rem 0rem;
+	font-weight: bold;
+	color: rgb(50, 50, 50);
+	margin: 0.5rem auto 0.25rem auto;
+}
+
+section.contato input,
+section.contato textarea {
+	width: 50%;
+	padding: 0.5rem;
+	border: 1px solid rgb(200, 200, 200);
+	border-radius: 0.25rem;
+	font-size: 1rem;
+	margin: 0.5rem auto 1.25rem auto;
+}
+
+section.contato button {
+	width: 20%;
+	padding: 0.75rem;
+	border: none;
+	border-radius: 0.25rem;
+	background-color: rgb(27, 170, 170);
+	color: white;
+	font-size: 1rem;
+	cursor: pointer;
+	margin: 0.5rem auto 1.25rem auto;
+}
+
+@media (max-width: 720px) {
+	.container {
+		grid-template-areas:
+			"header"
+			"sidebar"
+			"main"
+			"footer";
+	}
+
+	header img {
+		grid-column: 1;
+	}
+
+	sidebar nav {
+		grid-area: sidebar;
+		text-align: center;
+		border-radius: 0.5rem;
+	}
+
+    section.banner img {
+        width: 90%;
+        height: 10rem;
+    }
+
+	section.servicos {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"title"
+			"text"
+			"title-img1"
+			"img1"
+			"title-img2"
+			"img2"
+			"title-img3"
+			"img3";
+		text-align: center;
+	}
+
+	section.servicos img {
+		width: 12rem;
+		height: 12rem;
+		margin: 0 auto 3rem auto;
+	}
+
+	section.contato label,
+	section.contato input,
+	section.contato textarea,
+	section.contato button {
+		width: 100%;
+		text-align: center;
+	}
+}
