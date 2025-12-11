@@ -1,0 +1,19 @@
+@use 'variaveis';
+@use 'mixins';
+
+.header {
+	display: grid;
+	grid-area: header;
+	justify-content: center;
+	gap: 1.25rem;
+	background-color: rgb(248, 173, 111);
+	padding: 1rem;
+	height: 7rem;
+	@include mixins.box-shadow;
+    &__logo {
+        grid-column: 3;
+        border-radius: 5rem;
+        height: 5rem;
+        @include mixins.centered-content;
+    };
+}
